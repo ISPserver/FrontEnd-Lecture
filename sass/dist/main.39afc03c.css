@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*.container {
+    $size: 100px;
+    .item {
+        width: $size * 3;
+        height: $size;
+        background: tomato;
+    } 중첩 예시
+} */
+/*.fs { &기호(엠파센드) 부모 가리킴
+    &-small {
+      font-size: 14px;
+    }
+    &-medium {
+      font-size: 16px;
+    }
+    &-large {
+      font-size: 15px;
+    }
+  }*/
+/*.list{
+    $w: 100px;
+    $h: 50px;
+    li {
+        width: $w;
+        height: $h;
+    }
+    @at-root .box{      @at-root는 중첩 벗어나고 싶은데 변수는
+                        사용하고 싶을 때 쓰는 것    
+        width: $w;
+        height: $h;
+    }
+}*/
+.container .item {
+  background: tomato;
+  width: 150px;
+  height: 100px;
+  font-width: bold;
+  font-size: 30px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-bottom: 40px;
+}
+
+/*# sourceMappingURL=/main.39afc03c.css.map */

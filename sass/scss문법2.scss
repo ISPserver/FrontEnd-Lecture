@@ -1,0 +1,35 @@
+@mixin size($w: 10px,$h: 10px) {    //mixin으로 재활용(정의)
+                                    //10px으로 default값 설정
+    width: $w;
+    height: $h;
+}
+.box1 {
+    @include size(100px, 100px); //include로 사용
+}
+.box2 {
+    @include size($h: 300px);
+}
+.box3 {
+    @include size;
+}
+//-------------------------------------------
+@mixin large-text {
+    font: {
+        size: 22px;
+        weight: bold;
+        family: sans-serif;
+    }
+    color: orange;
+
+    &::after {
+        content: "!!!";
+    }
+    span.icon {
+        background: url("/images/icon.png");
+    }
+}
+//-------------------------------------------
+.box1 {
+    @include large-text;
+}
+

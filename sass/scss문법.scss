@@ -1,0 +1,75 @@
+//SCSS 문법(SASS)
+//----------------------------------------------
+.container {
+    $size: 100px;
+    .item {
+        width: $size * 3;
+        height: $size;
+        background: tomato;
+    } 중첩 예시
+} 
+//----------------------------------------------
+.fs { &기호(엠파센드) 부모 가리킴
+    &-small {
+      font-size: 14px;
+    }
+    &-medium {
+      font-size: 16px;
+    }
+    &-large {
+      font-size: 15px;
+    }
+  }
+//----------------------------------------------
+.list{
+    $w: 100px;
+    $h: 50px;
+    li {
+        width: $w;
+        height: $h;
+    }
+    @at-root .box{      @at-root는 중첩 벗어나고 싶은데 변수는
+                        사용하고 싶을 때 쓰는 것    
+        width: $w;
+        height: $h;
+    }
+}
+//----------------------------------------------
+.container {    
+    $size: 50px   !global <-- 전역변수 선언;
+    .item {
+        background: tomato;
+        width: $size*3;
+        height: $size*2;
+        font: {
+        width: bold;
+        size: 30px;
+        family: sans-serif;
+        }
+        margin: {
+        top: 20px;
+        left: 20px;
+        }
+        padding: {
+            bottom: 40px;     
+        }
+    }
+  }
+  //----------------------------------------------
+
+  
+  $family: unquote("Droid+Sans");
+  @import url("http://fonts.googleapis.com/css?family=#{family}");
+  --> unqoute는 ""제거해주는 함수, #{}을 이용해 어디든지 변수 삽입 가능
+  
+  //----------------------------------------------
+div {
+    width: 40px;        / OK /
+    height: 30px;       / OK /
+    font-size: 20px;    / OK /
+    margin: 30px /2;    / NO /
+    나누기            /연산은 구분기호로 식별되는 경우 많음 
+    규칙1 $x /2;            /변수를 나누기/
+    규칙2 (100px /2 )       /괄호를 묶어서 나누기/
+    규칙3 10px + 12px /3;   /가능한 연산에 껴서 쓰기/
+}
